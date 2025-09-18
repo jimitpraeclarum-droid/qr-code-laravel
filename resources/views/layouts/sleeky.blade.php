@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'The Digital Footprint')</title>
+    <title>@yield('title', 'Digital Footprint') - Digital Footprint</title>
     <link rel="stylesheet" href="{{ asset('css/templatemo-sleeky-pro.css') }}">
+    
     @stack('styles')
 </head>
 <body>
@@ -103,7 +104,7 @@
             
             <div class="footer-bottom">
                 <div class="footer-copyright">
-                    © 2026 The Digital Footprint. All rights reserved.
+                    © {{ date('Y') }}  The Digital Footprint. All rights reserved.
                 </div>
                 <div class="footer-credits">
                     

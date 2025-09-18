@@ -4,8 +4,8 @@
 |--------------------------------------------------------------------------
 */
 :root {
-    --primary-color: #4f46e5;
-    --primary-dark: #4338ca;
+    --primary-color: #FF6B6B;
+    --primary-dark: #ff0000;
     --secondary-color: #6b7280;
     --success-color: #10b981;
     --error-color: #ef4444;
@@ -20,7 +20,7 @@
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
-
+/*
 * {
     margin: 0;
     padding: 0;
@@ -501,7 +501,7 @@ a:hover {
 .content-tab.active {
     border-color: var(--primary-color);
     background: var(--primary-color);
-    color: white;
+    color: #fff;
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -851,4 +851,13 @@ img#logo-image {
     .menu-toggle {
         display: block;
     }
+}
+
+.with-left-panel {
+    width: 100%;
+    padding-top: 100px;
+}
+.left-panel {
+    width: 15%;
+    float: left;
 }
