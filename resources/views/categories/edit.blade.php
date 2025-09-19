@@ -33,7 +33,7 @@
                         @enderror
                     </div>
 
-                    <button type="submit" class="submit-btn">Update Category</button>
+                    <button type="submit" class="submit-btn">Update Category</button><br /><br />
                     <a href="{{ route('categories.index') }}" class="btn btn-secondary">Cancel</a>
                 </form>
             </div>

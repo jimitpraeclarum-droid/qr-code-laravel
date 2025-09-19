@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::post('/profile/update-name', [ProfileController::class, 'updateName'])->name('profile.updateName');
 
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
     Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');

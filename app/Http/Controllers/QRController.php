@@ -55,7 +55,7 @@ class QRController extends Controller
             });
         }
 
-        $qrCodes = $query->orderBy('created_at', 'desc')->paginate(5);
+        $qrCodes = $query->orderBy('created_at', 'desc')->paginate(15);
 
         return view('qr.index', compact('qrCodes'));
     }

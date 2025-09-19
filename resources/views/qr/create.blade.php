@@ -1,4 +1,7 @@
+
 @extends('layouts.app')
+
+@section('body-class', 'create-qr')
 
 @section('title', 'Create QR Code')
 
@@ -8,11 +11,13 @@
         @include('layouts.left-menu')
     </div>
     <div class="main-panel">
+        <section class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Create QR Code</h2>
+                    <p>Design and customize your QR code with our advanced editor</p>
+                </div>
         <div class="qr-creator-container">
-            <div class="qr-header">
-                <h1>Create QR Code</h1>
-                <p>Design and customize your QR code with our advanced editor</p>
-            </div>
 
             <form method="POST" action="{{ route('qr.store') }}" enctype="multipart/form-data" id="qrForm">
                 @csrf
@@ -22,33 +27,33 @@
                             <h3><i class="fas fa-stream"></i> Content Type</h3>
                             <div class="content-type-tabs-scroll">
                                 <div class="content-type-tabs">
-    @php
-        $icons = [
-            'url' => 'fas fa-link',
-            'pdf' => 'fas fa-file-pdf',
-            'plain-text' => 'fas fa-font',
-            'sms' => 'fas fa-sms',
-            'phone' => 'fas fa-phone',
-            'email' => 'fas fa-envelope-open-text',
-            'wifi' => 'fas fa-wifi',
-            'vcard' => 'fas fa-address-card',
-            'event' => 'fas fa-calendar-check',
-            'location' => 'fas fa-map-marked-alt',
-            'socials' => 'fas fa-share-alt',
-            'app' => 'fas fa-mobile-alt',
-            'multi-url' => 'fas fa-globe',
-            'file' => 'fas fa-file',
-        ];
-        $activeCategoryId = $qrCreationData['category_id'] ?? $categories->first()->category_id;
-    @endphp
-    @foreach($categories as $cat)
-                                    <button type="button" class="content-tab {{ $cat->category_id == $activeCategoryId ? 'active' : '' }}" 
-                                            data-category="{{ $cat->category_id }}" 
-                                            data-name="{{ $cat->category_name }}">
-                                        <i class="{{ $icons[$cat->category_key] ?? 'fas fa-qrcode' }}"></i>
-                                        <span>{{ ucfirst($cat->category_name) }}</span>
-                                    </button>
-    @endforeach
+                                @php
+                                    $icons = [
+                                        'url' => 'fas fa-link',
+                                        'pdf' => 'fas fa-file-pdf',
+                                        'plain-text' => 'fas fa-font',
+                                        'sms' => 'fas fa-sms',
+                                        'phone' => 'fas fa-phone',
+                                        'email' => 'fas fa-envelope-open-text',
+                                        'wifi' => 'fas fa-wifi',
+                                        'vcard' => 'fas fa-address-card',
+                                        'event' => 'fas fa-calendar-check',
+                                        'location' => 'fas fa-map-marked-alt',
+                                        'socials' => 'fas fa-share-alt',
+                                        'app' => 'fas fa-mobile-alt',
+                                        'multi-url' => 'fas fa-globe',
+                                        'file' => 'fas fa-file',
+                                    ];
+                                    $activeCategoryId = $qrCreationData['category_id'] ?? $categories->first()->category_id;
+                                @endphp
+                                @foreach($categories as $cat)
+                                                                <button type="button" class="content-tab {{ $cat->category_id == $activeCategoryId ? 'active' : '' }}" 
+                                                                        data-category="{{ $cat->category_id }}" 
+                                                                        data-name="{{ $cat->category_name }}">
+                                                                    <i class="{{ $icons[$cat->category_key] ?? 'fas fa-qrcode' }}"></i>
+                                                                    <span>{{ ucfirst($cat->category_name) }}</span>
+                                                                </button>
+                                @endforeach
                                 </div>
                             </div>
                         </div>
@@ -313,7 +318,7 @@
                                     <span>Rounded</span>
                                 </button>
                                 <button type="button" class="pattern-btn" data-pattern="dots">
-                                    <div class="pattern-preview dots"></div>
+                                    <div class="pattern-preview dot-s"></div>
                                     <span>Dots</span>
                                 </button>
                                 <button type="button" class="pattern-btn" data-pattern="smooth">
@@ -375,6 +380,8 @@
             </div>
         </div>
     </form>
+
+        </section>
 </div>
 
 <!-- Multi-URL Modal -->

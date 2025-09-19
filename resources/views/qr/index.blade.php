@@ -1,4 +1,7 @@
+
 @extends('layouts.sleeky')
+
+@section('body-class', 'qr-listing')
 
 @section('title', 'My QR Codes')
 
@@ -63,15 +66,16 @@
                             <p>No QR codes found. <a href="{{ route('qr.create') }}">Create one now!</a></p>
                         </div>
                     @endforelse
+                    <div class="d-flex justify-content-center mt-4">
+                        {{ $qrCodes->links() }}
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 </div>
 
-        <div class="d-flex justify-content-center mt-4">
-            {{ $qrCodes->links() }}
-        </div>
+        
     </div>
 </section>
 

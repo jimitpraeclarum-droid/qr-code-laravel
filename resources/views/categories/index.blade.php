@@ -1,5 +1,8 @@
 
+
 @extends('layouts.sleeky')
+
+@section('body-class', 'categories')
 
 @section('title', 'Manage Categories')
 

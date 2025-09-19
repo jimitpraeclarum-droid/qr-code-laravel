@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('body-class', 'create-qr edit-qr')
 
 @section('title', 'Edit QR Code')
 
@@ -8,11 +9,14 @@
         @include('layouts.left-menu')
     </div>
     <div class="main-panel">
-        <div class="qr-creator-container">
-            <div class="qr-header">
-                <h1>Edit QR Code</h1>
-                <p>Modify the details and design of your QR code</p>
-            </div>
+        <section class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Edit QR Code</h2>
+                    <p>Modify the details and design of your QR code</p>
+                </div>
+
+                <div class="qr-creator-container">
 
             <form method="POST" action="{{ route('qr.update', $qrCode->qrcode_id) }}" enctype="multipart/form-data" id="qrForm">
                 @csrf
@@ -316,6 +320,8 @@
             </div>
         </div>
     </form>
+
+        </section>
 </div>
 
 <!-- Multi-URL Modal -->

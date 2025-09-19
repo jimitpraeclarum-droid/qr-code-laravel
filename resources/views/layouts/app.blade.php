@@ -18,7 +18,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     @stack('styles')
 </head>
-<body>
+<body class="@yield('body-class')">
      <!-- Header -->
     <header class="header" id="header">
         <nav class="nav-container">
@@ -28,10 +28,10 @@
                 <span class="logo-text">The Digital Footprint</span>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="{{ route('home') }}" class="nav-link active">Home</a></li>
-                <li><a href="{{ route('qr.create') }}" class="nav-link">Create QR</a></li>
-                <li><a href="{{ route('qr.index') }}" class="nav-link">QR Codes</a></li>
-                <li><a href="{{ route('categories.index') }}" class="nav-link">Categories</a></li>
+                <li><a href="{{ route('home') }}" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{{ route('qr.create') }}" class="nav-link"><i class="fas fa-plus"></i> Create QR</a></li>
+                <li><a href="{{ route('qr.index') }}" class="nav-link"><i class="fas fa-qrcode"></i> QR Codes</a></li>
+                <li><a href="{{ route('categories.index') }}" class="nav-link"><i class="fas fa-grip-horizontal"></i> Categories</a></li>
                 @auth
                     <li><a href="{{ route('profile') }}" class="nav-link">Profile</a></li>
                     <li>

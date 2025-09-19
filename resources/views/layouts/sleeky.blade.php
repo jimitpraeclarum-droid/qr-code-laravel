@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Digital Footprint') - Digital Footprint</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/templatemo-sleeky-pro.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     @stack('styles')
 </head>
-<body>
+<body class="@yield('body-class')">
     <!-- Header -->
     <header class="header" id="header">
         <nav class="nav-container">
@@ -18,23 +21,23 @@
                 <span class="logo-text">The Digital Footprint</span>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="{{ route('home') }}" class="nav-link active">Home</a></li>
-                <li><a href="{{ route('qr.create') }}" class="nav-link">Create QR</a></li>
-                <li><a href="{{ route('qr.index') }}" class="nav-link">QR Codes</a></li>
-                <li><a href="{{ route('categories.index') }}" class="nav-link">Categories</a></li>
+                <li><a href="{{ route('home') }}" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{{ route('qr.create') }}" class="nav-link"><i class="fas fa-plus"></i> Create QR</a></li>
+                <li><a href="{{ route('qr.index') }}" class="nav-link"><i class="fas fa-qrcode"></i> QR Codes</a></li>
+                <li><a href="{{ route('categories.index') }}" class="nav-link"><i class="fas fa-grip-horizontal"></i> Categories</a></li>
                 @auth
-                    <li><a href="{{ route('profile') }}" class="nav-link">Profile</a></li>
+                    <li><a href="{{ route('profile') }}" class="nav-link"><i class="fas fa-user"></i> Profile</a></li>
                     <li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); this.closest('form').submit();">
-                                Logout
+                                <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
                         </form>
                     </li>
                 @else
-                    <li><a href="{{ route('login') }}" class="nav-link">Login</a></li>
-                    <li><a href="{{ route('register') }}" class="nav-link">Register</a></li>
+                    <li><a href="{{ route('login') }}" class="nav-link"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="{{ route('register') }}" class="nav-link"><i class="fas fa-user-plus"></i> Register</a></li>
                 @endauth
             </ul>
             <button class="hamburger" id="hamburger">
